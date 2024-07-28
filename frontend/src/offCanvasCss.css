@@ -29,33 +29,20 @@ body {
     transform: translateX(250px);
   }
   
-  .close-button {
-    position: absolute;
-    top: 20px;
-    right: 170px;
-    font-size: 24px;
-    background: none;
-    border: none;
-    color: #000;
-    cursor: pointer;
-  }
   
-  .off-canvas-menu nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 60px 0 0 20px;
-  }
-  
-  .off-canvas-menu nav ul li {
-    margin: 20px 0;
-  }
-  
-  .off-canvas-menu nav ul li a {
+  .ul{
+    position: relative;
+    display: block;
     color: #000;
     text-decoration: none;
     font-size: 18px;
+    right: 15px;
+    margin: 10px;
+    list-style: none;
+    padding: 0;
+    top: 50px;
   }
-  
+
   .overlay {
     position: fixed;
     top: 0;

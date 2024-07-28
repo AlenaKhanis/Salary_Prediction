@@ -1,4 +1,4 @@
-# app.py
+
 from flask import Flask, request, jsonify, render_template # type: ignore
 import pickle
 import numpy as np # type: ignore
