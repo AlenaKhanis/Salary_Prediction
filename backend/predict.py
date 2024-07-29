@@ -1,13 +1,13 @@
 
-from flask import Flask, request, jsonify, render_template # type: ignore
+from flask import request, jsonify ,Blueprint
 import pickle
-import numpy as np # type: ignore
-from flask_cors import CORS # type: ignore
+import numpy as np
+from flask_cors import CORS 
 from dotenv import load_dotenv
 
-app = Flask(__name__)
-cors = CORS(app , origins='*')
-load_dotenv()
+
+bp = Blueprint('predict', __name__)
+
 
 
 with open('saved_steps.pkl', 'rb') as file:
@@ -20,11 +20,13 @@ le_education = data['le_education']
 countries = le_country.classes_.tolist()
 educations = le_education.classes_.tolist()
 
-@app.route('/')
+
+@bp.route('/data', methods=['GET'])
 def get_data():
     return jsonify(countries, educations)
 
-@app.route('/predict', methods=['POST'])
+
+@bp.route('/predict', methods=['POST'])
 def predict():
     try:
         if request.method == 'POST':
@@ -46,3 +48,4 @@ def predict():
     except Exception as e:
         return jsonify({'error': str(e)}) , 400    
 
+    

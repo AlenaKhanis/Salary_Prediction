@@ -24,7 +24,7 @@ const Predict = () => {
   };
 
   useEffect(() => {
-    fetch(BACKEND_URL) 
+    fetch(`${BACKEND_URL}/data`) 
     .then(response => response.json())
     .then(data => {
       setCountry(data[0]);

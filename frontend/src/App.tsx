@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Predict from "./Predict";
-import Explore from "./Explore";
+import DataChart from "./Explore";
 import OffCanvasMenu from "./OffCanvasMenu";
 
 const App = () => {
@@ -10,7 +10,7 @@ const App = () => {
     <OffCanvasMenu />
     <Routes>
       <Route path='/' element={<Predict />} />
-      <Route path='/explore' element={<Explore />} />
+      <Route path='/explore' element={<DataChart />} />
     </Routes>
     </BrowserRouter>
   );
